@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,12 +18,17 @@
     <!-- MATERIAL ICONS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- DATATABLES -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+
     <?php if(isset($title)): ?>
     <title>App - <?= htmlspecialchars($title) ?></title>
     <?php else: ?>
     <title>App</title>
     <?php endif ?>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
@@ -58,9 +64,11 @@
     </main>
 
     <a class="cd-top js-cd-top" title="Subir">Top</a>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -71,8 +79,56 @@
     <script src="/js/main.js"></script>
     <script src="/js/back-to-top.js"></script>
 
+    <!-- DataTable -->
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
+
+
+
     <script type="text/javascript">
-        $('[data-toggle="popover"]').popover();
+        // $('[data-toggle="popover"]').popover();
+
+        // DataTable
+        let data = $(document).ready(function () {
+            $('#dataTable').DataTable({
+                ajax: {
+                    url: 'getData.php',
+                    method: 'POST',
+                    dataSrc: ''
+                },
+                // Campos de la tabla
+                columns: [
+                    { data: 'TrackId' },
+                    { data: 'Name' },
+                    { data: 'AlbumId' },
+                    { data: 'MediaTypeId' },
+                    { data: 'GenreId' },
+                    { data: 'Composer' },
+                    { data: 'Milliseconds' },
+                    { data: 'Bytes' },
+                    { data: 'UnitPrice' },
+                    { defaultContent: '<td class="text-center"><a href="" title="Editar asociado"><i class="material-icons edit">edit</i></a>&nbsp;&nbsp;<a href="" title="Eliminar asociado"><i class="material-icons delete">delete</i></a></td>' }
+                ],
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "zeroRecords": "No hay datos disponibles en la tabla",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                    "infoEmpty": "No hay registros disponibles",
+                    "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                    "search": "",
+                    "sSearchPlaceholder": 'Buscar...',
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sPrevious": "Anterior",
+                        "sNext": "Siguiente",
+                        "sLast": "Último"
+                    }
+                }
+            });
+        });
     </script>
 </body>
+
 </html>

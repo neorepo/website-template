@@ -1,0 +1,40 @@
+<style>
+    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before {
+        top: 6px;
+    }
+
+    .material-icons.delete {
+        color: #dc143c;
+    }
+
+    .material-icons.edit {
+        color: orange;
+    }
+</style>
+<div class="fs-14">
+    <div class="row align-items-center mb-3">
+        <div class="col">
+            <h1>Canciones</h1>
+        </div>
+        <div class="col-auto">
+            <a class="btn btn-primary btn-sm" href="#">Agregar</a>
+        </div>
+    </div>
+    <table id="dataTable" class="table table-striped table-sm table-bordered dt-responsive nowrap" style="width: 100%;">
+        <thead style="background-color: #007bff;color: #fff;">
+            <tr>
+                <th>TrackId</th>
+                <th>Name</th>
+                <th>AlbumId</th>
+                <th>MediaTypeId</th>
+                <th>GenreId</th>
+                <th>Composer</th>
+                <th>Milliseconds</th>
+                <th>Bytes</th>
+                <th>UnitPrice</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>

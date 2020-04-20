@@ -117,7 +117,7 @@ a.dark-switcher {
 }
 /*END BACK TO TOP*/
 
-/*  */
+/* ICONO DE TEMA DARK */
 img.theme-icon{
     height: 22px;
     width: 22px;
@@ -136,3 +136,4 @@ button.dark-switcher{
     border: none;
     cursor: pointer;
 }
+/* FIN ICONO DE TEMA DARK */
