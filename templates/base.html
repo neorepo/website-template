@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!-- ESTILOS PROPIOS -->
-    <link rel="stylesheet" href="css/main.css">
+    <!-- DATATABLES -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
 
     <!-- MATERIAL ICONS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- DATATABLES -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+    <!-- ESTILOS PROPIOS -->
+    <link rel="stylesheet" href="css/main.css">
 
     <?php if(isset($title)): ?>
     <title>App - <?= htmlspecialchars($title) ?></title>
@@ -67,8 +67,8 @@
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script> -->
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
-        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -85,31 +85,29 @@
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
 
-
-
     <script type="text/javascript">
         // $('[data-toggle="popover"]').popover();
 
         // DataTable
         let data = $(document).ready(function () {
             $('#dataTable').DataTable({
-                ajax: {
-                    url: 'getData.php',
-                    method: 'POST',
-                    dataSrc: ''
+                'ajax': {
+                    'url': 'getData.php',
+                    'method': 'POST',
+                    'dataSrc': ''
                 },
                 // Campos de la tabla
-                columns: [
-                    { data: 'TrackId' },
-                    { data: 'Name' },
-                    { data: 'AlbumId' },
-                    { data: 'MediaTypeId' },
-                    { data: 'GenreId' },
-                    { data: 'Composer' },
-                    { data: 'Milliseconds' },
-                    { data: 'Bytes' },
-                    { data: 'UnitPrice' },
-                    { defaultContent: '<td class="text-center"><a href="" title="Editar asociado"><i class="material-icons edit">edit</i></a>&nbsp;&nbsp;<a href="" title="Eliminar asociado"><i class="material-icons delete">delete</i></a></td>' }
+                'columns': [
+                    { 'data': 'TrackId' },
+                    { 'data': 'Name' },
+                    { 'data': 'AlbumId' },
+                    { 'data': 'MediaTypeId' },
+                    { 'data': 'GenreId' },
+                    { 'data': 'Composer' },
+                    { 'data': 'Milliseconds' },
+                    { 'data': 'Bytes' },
+                    { 'data': 'UnitPrice' },
+                    { 'defaultContent': '<td class="text-center"><a href="" title="Editar asociado"><i class="material-icons edit">edit</i></a>&nbsp;&nbsp;<a href="" title="Eliminar asociado"><i class="material-icons delete">delete</i></a></td>' }
                 ],
                 "language": {
                     "lengthMenu": "Mostrar _MENU_ registros",

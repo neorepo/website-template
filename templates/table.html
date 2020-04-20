@@ -1,23 +1,13 @@
-<style>
-    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before {
-        top: 6px;
-    }
-
-    .material-icons.delete {
-        color: #dc143c;
-    }
-
-    .material-icons.edit {
-        color: orange;
-    }
-</style>
 <div class="fs-14">
     <div class="row align-items-center mb-3">
         <div class="col">
-            <h1>Canciones</h1>
+            <h1>Canciones <a href="#" title="Agregar"><span class="material-icons">add_circle</span></a>
+            </h1>
         </div>
         <div class="col-auto">
-            <a class="btn btn-primary btn-sm" href="#">Agregar</a>
+            <a href="/export" class="" title="Exportar"><i class="material-icons"
+                    style="color: #ff0000;">picture_as_pdf</i></a>&nbsp;&nbsp;
+            <a href="/print" class="" title="Imprimir"><i class="material-icons" style="color:#344D90;">print</i></a>
         </div>
     </div>
     <table id="dataTable" class="table table-striped table-sm table-bordered dt-responsive nowrap" style="width: 100%;">
@@ -35,6 +25,5 @@
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody></tbody>
     </table>
 </div>

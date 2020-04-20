@@ -6,10 +6,6 @@
     box-shadow: none !important;
 }
 
-.material-icons {
-    font-size: 20px;
-}
-
 .form-container {
     width: 100%;
     max-width: 400px;
@@ -137,3 +133,20 @@ button.dark-switcher{
     cursor: pointer;
 }
 /* FIN ICONO DE TEMA DARK */
+
+/*  */
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before {
+    top: 6px;
+}
+
+.material-icons{
+    vertical-align: bottom;
+}
+
+.material-icons.delete {
+    color: #dc143c;
+}
+
+.material-icons.edit {
+    color: orange;
+}
