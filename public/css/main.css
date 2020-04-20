@@ -116,3 +116,23 @@ a.dark-switcher {
     }
 }
 /*END BACK TO TOP*/
+
+/*  */
+img.theme-icon{
+    height: 22px;
+    width: 22px;
+    float: right;
+    min-width: 22px;
+    margin-bottom: 0;
+}
+
+button.dark-switcher:focus {
+    outline: none;
+}
+
+button.dark-switcher{
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

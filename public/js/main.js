@@ -24,7 +24,7 @@ function showPassword() {
         } else {
             password.type = confirm_password.type = "password";
         }
-    } else{
+    } else {
         if (password.type === "password") {
             password.type = "text";
         } else {
@@ -35,32 +35,32 @@ function showPassword() {
 // Fin de la funcion mostrar contraseña
 
 // Dark/Light Mode
-if(localStorage.dark === 'true'){
+if (localStorage.dark === 'true') {
     darkLightMode();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    if(querySelector('.dark-switcher'))
+    if (querySelector('.dark-switcher'))
         querySelector('.dark-switcher').onclick = darkLightMode;
 })
 
 function darkLightMode() {
-    var themeIcon, title;
-    if(querySelector('.theme-icon').textContent === 'brightness_4'){
+    var src, alt;
+    if (querySelector('.theme-icon').getAttribute('src') === 'img/moon.svg') {
         localStorage.dark = true;
-        themeIcon = 'brightness_5';
-        title = 'Light';
-    } else{
+        src = 'img/sun.svg';
+        alt = 'Light';
+    } else {
         localStorage.dark = false;
-        themeIcon = 'brightness_4';
-        title = 'Dark';
+        src = 'img/moon.svg';
+        alt = 'Dark';
     }
     document.body.classList.toggle('dark');
     // if(querySelector('.table')) querySelector('.table').classList.toggle('table-dark');
     querySelector('.navbar').classList.toggle('navbar-dark');
     querySelector('.navbar').classList.toggle('navbar-light');
-    querySelector('.theme-icon').textContent = themeIcon;
-    querySelector('.theme-icon').title = title + ' Mode';
+    querySelector('.theme-icon').src = src;
+    querySelector('.theme-icon').alt = alt + ' Mode';
 }
 // END Dark/Light Mode
 

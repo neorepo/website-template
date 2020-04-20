@@ -1,3 +1,8 @@
+<?php if ($flashes): ?>
+    <?php foreach ($flashes as $flash): ?>
+    <div class="alert alert-<?= $flash['class'] ?>"><?php echo $flash['message']; ?></div>
+    <?php endforeach; ?>
+<?php endif; ?>
 <div class="jumbotron text-center" style="background-color: transparent;">
     <h1 style="font-size: 2rem;">Bienvenido a mi página Web</h1>
     <p class="lead">App es una aplicación desarrollada con PHP, que tiene como objetivo la publicación de pensamientos, ideas y percepciones acerca de la situación actual del mundo en el que vivimos, de modo que podamos reflexionar sobre la compleja realidad en la que nos encontramos inmersos.</p>
