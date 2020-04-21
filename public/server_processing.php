@@ -7,10 +7,24 @@ require_once '../src/Db.php';
 $action = $_POST['action'] ?? '';
 $user_id = $_POST['user_id'] ?? '';
 
+$username = $_POST['username'] ?? '';
+$first_name = $_POST['first_name'] ?? '';
+$last_name = $_POST['last_name'] ?? '';
+$gender = $_POST['gender'] ?? '';
+$password = $_POST['password'] ?? '';
+$status =  $_POST['status'] ?? '';
+
 switch ($action) {
     // CREATE
     case 1:
-        $rows = Db::query('');
+        $last_modified_on = $created_on = date('Y-m-d H:i:s');
+        $deleted = 0;
+        $q = 'INSERT INTO user (username, first_name, last_name, gender, password, status, created_on, last_modified_on, deleted)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        Db::query($q, $username, $first_name, $last_name, $gender, $password, $status, $created_on, $last_modified_on, $deleted);
+
+        $rows = Db::query('SELECT * FROM user ORDER BY user_id DESC LIMIT 1');
         break;
     // READ
     case 2:

@@ -2,6 +2,7 @@
 $(document).ready(function () {
     let user_id;
     let action = 2;
+    let row;
 
     // SELECT DATOS
     userTable = $('#dataTable').DataTable({
@@ -23,14 +24,51 @@ $(document).ready(function () {
             { 'data': 'created_on' },
             { 'data': 'last_modified_on' },
             {
-                'defaultContent': `<div class="text-center">
-                                        <a href="javascript:void(0)" class="edit-icon" title="Editar usuario">
+                'defaultContent': `<span class="text-center">
+                                        <a href="javascript:void(0)" class="edit-icon ml-2" title="Editar usuario">
                                             <i class="material-icons edit">edit</i></a>&nbsp;&nbsp;
-                                        <a href="javascript:void(0)" class="delete-icon" title="Eliminar usuario">
+                                        <a href="javascript:void(0)" class="delete-icon mr-2" title="Eliminar usuario">
                                             <i class="material-icons delete">delete</i></a>
-                                    </div>`
+                                    </span>`
             }
         ]
+    });
+
+    //submit para el Alta y Actualización
+    $('#registerForm').submit(function (e) {
+        e.preventDefault(); //evita el comportambiento normal del submit, es decir, recarga total de la página
+        username = $.trim($('#usuario').val());
+        first_name = $.trim($('#nombre').val());
+        last_name = $.trim($('#apellido').val());
+        gender = $('input:radio[name=genero]:checked').val();
+        password = $.trim($('#password').val());
+        confirm_password = $.trim($('#confirm-password').val());
+        status = $.trim($('#status').val());
+        $.ajax({
+            url: "server_processing.php",
+            type: "POST",
+            datatype: "json",
+            data: {
+                user_id: user_id, username: username, first_name: first_name,
+                last_name: last_name, gender: gender, password: password,
+                confirm_password: confirm_password, status: status, action: action
+            },
+            success: function (data) {
+                userTable.ajax.reload(null, false);
+            }
+        });
+        $('#registerModal').modal('hide');
+    });
+
+    //para limpiar los campos antes de dar de Alta una Persona
+    $("#newUser").click(function () {
+        action = 1; //alta           
+        user_id = null;
+        $("#registerForm").trigger("reset");
+        $(".modal-header").css("background-color", "#007bff");
+        $(".modal-header").css("color", "white");
+        $(".modal-title").text("Alta de Usuario");
+        $('#registerModal').modal('show');
     });
 
     // ELIMINAR
@@ -51,13 +89,4 @@ $(document).ready(function () {
             });
         }
     });
-
-    function capital_letters(str) {
-        str = str.split(" ");
-        let n = str.length;
-        for (var i = 0, x = n; i < x; i++) {
-            str[i] = str[i][0].toUpperCase() + str[i].substr(1);
-        }
-        return str.join(" ");
-    }
 });

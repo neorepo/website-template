@@ -14,7 +14,7 @@
 
     <!-- DATATABLES -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
 
     <!-- MATERIAL ICONS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -65,7 +65,7 @@
         <!-- Modal -->
         <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
             aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalLabel">Nuevo usuario</h5>
@@ -74,7 +74,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="/register.php" method="POST">
+                        <form id="registerForm">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <input type="text" class="form-control" name="nombre" id="nombre" value=""
@@ -107,14 +107,26 @@
                             <!-- RADIO BUTTONS -->
                             <div class="form-group">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="female" name="gender" class="custom-control-input">
+                                    <input type="radio" id="female" name="genero" class="custom-control-input"
+                                        value="Femenino">
                                     <label class="custom-control-label" for="female">Femenino</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="male" name="gender" class="custom-control-input">
+                                    <input type="radio" id="male" name="genero" class="custom-control-input"
+                                        value="Masculino">
                                     <label class="custom-control-label" for="male">Masculino</label>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <select class="custom-select" name="" id="status">
+                                    <option value="">Seleccione un estado</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+
                             <small id="passwordHelp" class="form-text mb-1 mt-0">Utiliza ocho caracteres como mínimo con
                                 una combinación de letras, números y símbolos.</small>
                             <div class="form-row">
@@ -143,11 +155,11 @@
                                     <a href="/login.php">¿Ya tienes una cuenta?</a>
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Crear usuario</button>
+                            </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Crear usuario</button>
                     </div>
                 </div>
             </div>
@@ -173,8 +185,8 @@
     <!-- DataTable -->
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-    <!-- <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script> -->
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
 
     <script src="/js/client_processing.js"></script>
 </body>
