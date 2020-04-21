@@ -1,3 +1,4 @@
+BEGIN TRANSACTION;
 CREATE TABLE user (
     user_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     username TEXT NOT NULL UNIQUE,
@@ -702,3 +703,4 @@ INSERT INTO user (username, first_name, last_name, gender, password, status) VAL
  ('michael13','morris','cooper','Female','9d450e0529ca7328d07679163206f732','1'),
  ('miller64','morgan','wright','Male','58b207ee33794b046511203967c8e0d7','1'),
  ('jperez','Jorge','Perez','Masculino','213213213213','1');
+COMMIT;
