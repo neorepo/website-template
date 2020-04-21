@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('AMERICA/ARGENTINA/BUENOS_AIRES');
+
 require_once '../src/Db.php';
 
 $action = $_POST['action'] ?? '';
@@ -8,15 +10,19 @@ $user_id = $_POST['user_id'] ?? '';
 switch ($action) {
     // CREATE
     case 1:
-        $rows = Db::query('SELECT * FROM user; ');
+        $rows = Db::query('');
         break;
     // READ
     case 2:
         $rows = Db::query('SELECT * FROM user WHERE deleted = 0; ');
+        foreach($rows as &$row){
+            $row['first_name'] = ucwords($row['first_name']);
+            $row['last_name'] = ucwords($row['last_name']);
+        }
         break;
     // UPDATE
     case 3:
-        $rows = Db::query('SELECT * FROM user; ');
+        $rows = Db::query('');
         break;
     // DELETE
     case 4:

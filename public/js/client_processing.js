@@ -14,7 +14,7 @@ $(document).ready(function () {
         // Campos de la tabla
         'columns': [
             { 'data': 'user_id' },
-            { 'data': 'user_name' },
+            { 'data': 'username' },
             { 'data': 'first_name' },
             { 'data': 'last_name' },
             { 'data': 'gender' },

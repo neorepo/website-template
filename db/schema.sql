@@ -1,6 +1,6 @@
 CREATE TABLE user (
     user_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    user_name TEXT NOT NULL UNIQUE,
+    username TEXT NOT NULL UNIQUE,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
     gender TEXT NOT NULL,
@@ -21,10 +21,10 @@ CREATE TABLE user (
 -- LA SIGUIENTE LINEA ES UN EJEMPLO DE UN CAMPO EN EL PROYECTO TODOLIST DE NETBEANS
 -- status TEXT NOT NULL CHECK(status IN('PENDING', 'DONE', 'VOIDED')),
 
-CREATE INDEX idx_user_name ON user(user_name);
+CREATE INDEX idx_user_username ON user(username);
 CREATE INDEX idx_user_deleted ON user(deleted);
 
-INSERT INTO user (user_name, first_name, last_name, gender, password, status) VALUES 
+INSERT INTO user (username, first_name, last_name, gender, password, status) VALUES 
  ('rogers63','david','john','Female','e6a33eee180b07e563d74fee8c2c66b8','1'),
  ('mike28','rogers','paul','Male','2e7dc6b8a1598f4f75c3eaa47958ee2f','1'),
  ('rivera92','david','john','Male','1c3a8e03f448d211904161a6f5849b68','1'),
