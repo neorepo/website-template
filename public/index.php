@@ -12,10 +12,15 @@ session_name('ID');
 session_start();
 
 require_once '../src/Db.php';
+require_once '../src/Flash.php';
 
 
 $title = 'Bienvenido a mi Página Web';
 
-$template = '../templates/table.html';
+$flashes = null;
+if (Flash::hasFlashes()) {
+    $flashes = Flash::getFlashes();
+}
 
+$template = '../templates/table.html';
 require_once '../templates/base.html';

@@ -12,20 +12,61 @@
             <a href="/print" class="" title="Imprimir"><i class="material-icons" style="color:#344D90;">print</i></a>
         </div>
     </div>
-    <table id="dataTable" class="table table-striped table-sm table-bordered dt-responsive nowrap" style="width: 100%;">
-        <thead style="background-color: #007bff;color: #fff;">
-            <tr>
-                <th>Id</th>
-                <th>Usuario</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Sexo</th>
-                <th>Contraseña</th>
-                <th>Estado</th>
-                <th>Creación</th>
-                <th>Modificado</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-    </table>
+    <!-- dt-responsive nowrap -->
+    <div class="table-responsive">
+        <table id="dataTable" class="table table-striped table-sm table-bordered" style="width: 100%;">
+            <thead style="background-color: #007bff;color: #fff;">
+                <tr>
+                    <th>Id</th>
+                    <th>Usuario</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Sexo</th>
+                    <!-- <th>Contraseña</th> -->
+                    <th>Estado</th>
+                    <th>Creación</th>
+                    <th>Modificado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 </div>
+<hr>
+<form action="" method="post">
+    <fieldset class="form-group">
+        <legend>Información personal</legend>
+        Apellido: <input class="form-control mb-3" name="personal_lastname" type="text" tabindex="1">
+        Nombre: <input class="form-control mb-3" name="personal_firstname" type="text" tabindex="2">
+        Dirección: <input class="form-control" name="personal_address" type="text" tabindex="3">
+    </fieldset>
+    <fieldset class="form-group">
+        <legend>Historia clínica</legend>
+        <div>
+            <input id="viruela" name="history_illness" type="checkbox" value="Smallpox" tabindex="20">
+            <label for="viruela">Viruela</label>
+        </div>
+        <div>
+            <input id="paperas" name="history_illness" type="checkbox" value="Mumps" tabindex="21">
+            <label for="paperas">Paperas</label>
+        </div>
+        <div>
+            <input id="vertigo" name="history_illness" type="checkbox" value="Dizziness" tabindex="22">
+            <label for="vertigo">Vértigo</label>
+        </div>
+        <div>
+            <input id="estornudo" name="history_illness" type="checkbox" value="Sneezing" tabindex="23">
+            <label for="estornudo">Estornudos</label>
+        </div>
+    </fieldset>
+    <fieldset class="form-group">
+        <legend>Medicación actual</legend>
+        ¿Actualmente está tomando algún medicamento?
+        <input name="medication_now" type="radio" value="Yes" tabindex="35"> Si
+        <input name="medication_now" type="radio" value="No" tabindex="35"> No,
+
+        Si actualmente está tomando medicamentos, indiquelo
+        en el espacio de abajo:
+        <textarea class="form-control" name="current_medication" rows="5" cols="50" tabindex="40"></textarea>
+    </fieldset>
+</form>
