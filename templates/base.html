@@ -64,7 +64,7 @@
         <div class="alert alert-<?= $flash['class']?>"><?= $flash['message']; ?></div>
         <?php endforeach; ?>
         <?php endif; ?>
-        
+
         <!-- El contenido específico de la página va aquí -->
         <?php require $template; ?>
         <!-- Fin del contenido específico -->
@@ -72,7 +72,7 @@
         <!-- Modal -->
         <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <!-- MODAL HEADER -->
                     <div class="modal-header">
@@ -81,9 +81,11 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <!-- MODAL BODY -->
-                    <div class="modal-body">
-                        <form id="registerForm">
+                    
+                    <form id="registerForm">
+
+                        <!-- MODAL BODY -->
+                        <div class="modal-body">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="nombre">Nombre</label>
@@ -170,17 +172,17 @@
                                     contraseña</label>
                             </div>
                             <div class="row align-items-center mb-3">
-                                <div class="col-auto">
+                                <div class="col">
                                     <a href="/login.php">¿Ya tienes una cuenta?</a>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- MODAL FOOTER -->
+                        </div>
+                        <!-- MODAL FOOTER -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
