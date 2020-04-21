@@ -14,7 +14,7 @@
 
     <!-- DATATABLES -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css"> -->
 
     <!-- MATERIAL ICONS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -82,51 +82,10 @@
     <!-- DataTable -->
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
+    <!-- <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script> -->
 
-    <script type="text/javascript">
-        // $('[data-toggle="popover"]').popover();
-
-        // DataTable
-        let data = $(document).ready(function () {
-            $('#dataTable').DataTable({
-                'ajax': {
-                    'url': 'getData.php',
-                    'method': 'POST',
-                    'dataSrc': ''
-                },
-                // Campos de la tabla
-                'columns': [
-                    { 'data': 'TrackId' },
-                    { 'data': 'Name' },
-                    { 'data': 'AlbumId' },
-                    { 'data': 'MediaTypeId' },
-                    { 'data': 'GenreId' },
-                    { 'data': 'Composer' },
-                    { 'data': 'Milliseconds' },
-                    { 'data': 'Bytes' },
-                    { 'data': 'UnitPrice' },
-                    { 'defaultContent': '<td class="text-center"><a href="" title="Editar asociado"><i class="material-icons edit">edit</i></a>&nbsp;&nbsp;<a href="" title="Eliminar asociado"><i class="material-icons delete">delete</i></a></td>' }
-                ],
-                "language": {
-                    "lengthMenu": "Mostrar _MENU_ registros",
-                    "zeroRecords": "No hay datos disponibles en la tabla",
-                    "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
-                    "infoEmpty": "No hay registros disponibles",
-                    "infoFiltered": "(filtrado de _MAX_ registros totales)",
-                    "search": "",
-                    "sSearchPlaceholder": 'Buscar...',
-                    "oPaginate": {
-                        "sFirst": "Primero",
-                        "sPrevious": "Anterior",
-                        "sNext": "Siguiente",
-                        "sLast": "Último"
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="/js/client_processing.js"></script>
 </body>
 
 </html>
