@@ -1,9 +1,8 @@
 // DataTable
 $(document).ready(function () {
-    let user_id;
-    let action = 2;
-    let row;
 
+    let user_id, row, action = 2;
+    
     // READ
     userTable = $('#dataTable').DataTable({
         'ajax': {
@@ -34,6 +33,7 @@ $(document).ready(function () {
         ]
     });
 
+    // CREATE
     //submit para el Alta y Actualización
     $('#registerForm').submit(function (e) {
         e.preventDefault(); //evita el comportambiento normal del submit
@@ -94,7 +94,7 @@ $(document).ready(function () {
         $('#registerModal').modal('show');
     });
 
-    // ELIMINAR
+    // DELETE
     $(document).on("click", ".delete-icon", function () {
         row = $(this);
         user_id = parseInt($(this).closest('tr').find('td:eq(0)').text());

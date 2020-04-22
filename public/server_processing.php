@@ -1,5 +1,6 @@
 <?php
 
+// Para fechas locales, la funcion date entregara la fecha del equipo en local
 date_default_timezone_set('AMERICA/ARGENTINA/BUENOS_AIRES');
 
 require_once '../src/Db.php';
