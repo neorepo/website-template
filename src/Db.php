@@ -10,7 +10,7 @@ class Db
     {
         try {
             // $config = Config::getConfig('mysql');
-            $dsn = 'sqlite:../db/db.sqlite'; // ruta absoluta
+            $dsn = 'sqlite:../db/db.db'; // ruta relativa
             // $dsn = 'mysql:host=localhost;dbname=db;charset=utf8mb4';
             $this->conn = new PDO($dsn, '', '', array(
                 PDO::ATTR_PERSISTENT => true,
