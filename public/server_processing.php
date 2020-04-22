@@ -64,4 +64,22 @@ switch ($action) {
         break;
 }
 
+// Array
+$message = [
+    'success' => true,
+    'success_message' => '<p>Sus datos han sido eliminados exitosamente de la base de datos.<\/p>'
+];
+
+// Retorna un string codificado a formato JSON
 print json_encode($rows, JSON_UNESCAPED_UNICODE);
+exit;
+
+// String resultante despues de pasar por la función json_encode
+$message_encode = '{"success":true,"success_message":"<p>Sus datos han sido eliminados exitosamente de la base de datos.<\/p>"}';
+
+/**
+ * EN JAVASCRIPT
+ * var stringJSON = '{"success":true,"success_message":"<p>Sus datos han sido eliminados exitosamente de la base de datos.<\/p>"}';
+ * var data = JSON.parse(stringJSON);
+ * document.getElementById("demo").innerHTML = data.success; // true
+ */
